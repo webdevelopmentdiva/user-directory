@@ -1,7 +1,8 @@
 import React, { useState, useRef } from 'react';
-import Jumbotron from "./components/jumbotron/jumbotron.js";
+import Jumbotron from "./components/Jumbotron/jumbotron.js";
 import './App.css';
-import EmployeeList from "./components/employees/EmployeeList.js";
+import EmployeeList from "./components/EmployeeList/employeeList.js";
+import Search from "./components/Search/search.js";
 
 
 function App() {
@@ -19,14 +20,13 @@ function App() {
   }
 
   return (
-      <>
-      <Jumbotron />   
-      <EmployeeList employees={employees} />   
-      <h1>Employee Directory Search</h1>
-      <input ref={employeeNameRef} type="text" />
-      <button onClick={handleAddEmployee}>Add Employee</button>
-      <button>Remove Employee</button>
-      </>
+    <React.Fragment>
+
+      <Jumbotron />
+      <Search />
+      <EmployeeList />
+
+    </React.Fragment>   
   )
 }
 
