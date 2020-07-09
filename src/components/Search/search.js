@@ -1,11 +1,11 @@
 import React from "react";
 
-function Search({handleOnChange, users}) {
-    return (
-        <div className="">
+function Search({ handleOnChange, users }) {
+    return ( 
+        <div>
             <form> 
                 <input
-                    className=""
+                   
                     type="Search"
                     placeholder="Search Here"
                     onChange={(event) => handleOnChange(event)} 
@@ -16,4 +16,4 @@ function Search({handleOnChange, users}) {
     );
 }
 
-export default Search();
+export default Search;

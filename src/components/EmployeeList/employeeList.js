@@ -1,11 +1,37 @@
 import React from 'react';
-// import Employee from "./Employee/employee.js";
 
 
-export default function EmployeeList({ employee }) {
+
+function EmployeeList(props) {
     return (
-employee.map(employee => {
-    return <Employee key={employee.id} employee={employee} />
-})
+        <tbody>
+            {props.users.map((user, index) => {
+                return(
+
+                <tr key={index}>
+                    <td>
+                        <img src={user.picture.large} alt="employee"></img>
+                    </td>
+                    <td>
+                        {user.name.title}
+                    </td>
+                    <td>
+                        {user.name.first}
+                    </td>
+                    <td>
+                        {user.name.last}
+                    </td>
+                    <td>
+                        {user.email}
+                    </td>
+                    <td>
+                        {user.phone}
+                    </td>
+                </tr>
+                )
+            })}
+        </tbody>
     )
 };
+
+export default EmployeeList;

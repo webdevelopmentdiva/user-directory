@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
+import Search from "../Search/search";
+import EmployeeList from "../EmployeeList/employeeList";
 
 
 export default class TableData extends Component {
@@ -36,17 +38,21 @@ export default class TableData extends Component {
                                 .toLowerCase();
             return values.indexOf(filter.toLowerCase()) !== -1;
         });
-        thisSetState({ filteredUsers: filteredList});
+        this.setState({ filteredUsers: filteredList});
         console.log(filteredList);
     };
-    
-
-
-
-
-
-
-
-
-
+    render() {
+        return (
+            <div>
+                <Search 
+                    handleOnChange={this.handleOnChange}
+                    users={this.state.users} 
+                />
+            
+                <table>
+                    <EmployeeList users={this.state.filteredUsers} />
+                </table>
+            </div>
+        );
+    }
 }
